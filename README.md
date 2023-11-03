@@ -68,6 +68,12 @@ Aims to reduce the number of classes used for an application. It allows you to c
 - Highly recommended to use it when the object creation is an expensive task in terms of time and usage of resources and already there exists a similar object.
 - Provides a way to copy the original object and then modify it according to our needs.
 
+Notes:
+
+- Basically is the implementation of `copy.copy` and `copy.deepcopy` for custom objects
+
+Importance: 3
+
 ### 1.5. Singleton
 
 It is a way to provide one and only one object of a particular type. It involves only one class to create methods and specify the objects.
