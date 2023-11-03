@@ -55,6 +55,12 @@ Aims to separate the construction of a complex object from its representation so
 - Allows you to construct complex objects step by step. Using the same construction code, we can produce different types and representations of the object easily.
 - Provides flexibility to the solutions to various object creation problems.
 
+Notes:
+
+- Use Builder only when the products are quite complex and require extensive configuration
+
+Importance: 4
+
 ### 1.4. Prototype
 
 Aims to reduce the number of classes used for an application. It allows you to copy existing objects independent of the concrete implementation of their classes. Generally, here the object is created by copying a prototypical instance during run-time.
