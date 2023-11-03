@@ -41,6 +41,13 @@ Allows you to produce the families of related objects without specifying their c
 - Easiest way to produce a similar type of many objects.
 - It provides a way to encapsulate a group of individual factories. Basically, here we try to abstract the creation of the objects depending on the logic, business, platform choice, etc.
 
+Notes:
+
+- Products from a factory are compatible with each other
+- 2 main entities: Creator and Product
+
+Importance: 4
+
 ### 1.3. Builder
 
 Aims to separate the construction of a complex object from its representation so that the same construction process can create different representations.
@@ -167,3 +174,4 @@ See those posts for more information:
 
 - [GeeksForGeeks](https://www.geeksforgeeks.org/python-design-patterns/)
 - [RefactoringGuru](https://refactoring.guru/design-patterns)
+- [Medium](https://medium.com/towardsdev/a-catalog-for-design-patterns-in-python-a1b69493c677)
