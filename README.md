@@ -80,6 +80,13 @@ It is a way to provide one and only one object of a particular type. It involves
 
 - Example: Database connectivity. When each object creates a unique Database Connection to the Database, it will highly affect the cost and expenses of the project. So, it is always better to make a single connection rather than making extra irrelevant connections.
 
+Notes:
+
+- Potential issues related to thread safety.
+- It brakes the Single Responsibility Principle.
+
+Importance: 3
+
 ## 2. Structural
 
 Are about organizing different classes and objects to form larger structures and provide new functionality while keeping these structures flexible and efficient. Mostly they use Inheritance to compose all the interfaces. It also identifies the relationships which led to the simplification of the structure.
@@ -187,3 +194,4 @@ See those posts for more information:
 - [GeeksForGeeks](https://www.geeksforgeeks.org/python-design-patterns/)
 - [RefactoringGuru](https://refactoring.guru/design-patterns)
 - [Medium](https://medium.com/towardsdev/a-catalog-for-design-patterns-in-python-a1b69493c677)
+- [Clean Code in Python, by Mariano Anaya](https://www.packtpub.com/product/clean-code-in-python-second-edition/9781800560215)
