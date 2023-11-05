@@ -103,6 +103,12 @@ Are about organizing different classes and objects to form larger structures and
 
 Help us in making the incompatible objects adaptable to each other. This method provides a different interface for a class. Using this idea, we can integrate the classes that couldn’t be integrated due to interface incompatibility.
 
+Notes:
+
+- It’s very often used in systems based on some legacy code. In such cases, Adapters make legacy code work with modern classes.
+
+Importance: 4
+
 ### 2.2. Bridge
 
 Allows us to separate the Implementation Specific Abstractions and Implementation Independent Abstractions from each other and can be developed considering as the single entities. Bridge Method is always considered as one of the best methods to organize the class hierarchy.
