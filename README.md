@@ -152,17 +152,22 @@ Notes:
 
 Importance: 4
 
-### 2.6. Proxy
+### 2.6. FlyWeight
+
+Focus on minimizing the number of objects that are required by the program at the run-time. Basically, it creates a Flyweight object which is shared by multiple contexts. It is created in such a fashion that you can not distinguish between an object and a Flyweight Object. One important feature of flyweight objects is that they are immutable.
+
+Notes:
+
+- To implement the Flyweight method in Python, we use Dictionary that stores reference to the object which have already been created, every object is associated with a key.
+- Prototype design pattern sounds similar, but it was about the initial creation of any objects. The purpose is different. The Flyweight pattern is used to reduce memory usage by sharing common data among similar objects, while the Prototype pattern is used to create new objects by copying existing ones.
+
+Importance: 1
+
+### 2.7. Proxy
 
 Allows you to provide the replacement for an another object. Here, we use different classes to represent the functionalities of another class. The most important part is that here we create an object having original object functionality to provide to the outer world.
 
 Proxies are also called surrogates, handles, and wrappers. They are closely related in structure, but not purpose, to Adapters and Decorators. The purpose is "Controls and manage access to the object they are protecting".
-
-### 2.7. FlyWeight
-
-Focus on minimizing the number of objects that are required by the program at the run-time. Basically, it creates a Flyweight object which is shared by multiple contexts. It is created in such a fashion that you can not distinguish between an object and a Flyweight Object. One important feature of flyweight objects is that they are immutable.
-
-- To implement the Flyweight method in Python, we use Dictionary that stores reference to the object which have already been created, every object is associated with a key.
 
 ## 3. Behavioral
 
