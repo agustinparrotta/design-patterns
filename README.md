@@ -167,7 +167,7 @@ Importance: 1
 
 Allows you to provide the replacement for an another object. Here, we use different classes to represent the functionalities of another class. The most important part is that here we create an object having original object functionality to provide to the outer world.
 
-Proxies are also called surrogates, handles, and wrappers. They are closely related in structure, but not purpose, to Adapters and Decorators. The purpose is "Controls and manage access to the object they are protecting".
+Proxies are also called surrogates, handles, and wrappers. They are closely related in structure, but not purpose, to Adapters, Decorators and Facade. The purpose is "Controls and manage access to the object they are protecting".
 
 Notes:
 
@@ -195,6 +195,12 @@ Are about identifying the common communication patterns between objects and real
 
 Is the object-oriented version of if … elif … elif … else and make us capable to rearrange the condition-action blocks dynamically at the run-time. It allows us to pass the requests along the chain of handlers. The processing is simple, whenever any handler received the request it has two choices either to process it or pass it to the next handler in the chain.
 This pattern aims to decouple the senders of a request from its receivers by allowing the request to move through chained receivers until it is handled.
+
+Notes:
+
+- It’s mostly relevant when your code operates with chains of objects, such as filters, event chains, etc.
+
+Importance: 3
 
 ### 3.2. Command
 
