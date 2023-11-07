@@ -206,6 +206,14 @@ Importance: 3
 
 Encapsulates a request as an object, thereby allowing for the parameterization of clients with different requests and the queuing or logging of requests. Parameterizing other objects with different requests in our analogy means that the button used to turn on the lights can later be used to turn on stereo or maybe open the garage door. It helps in promoting the “invocation of a method on an object” to full object status. Basically, it encapsulates all the information needed to perform an action or trigger an event.
 
+Notes:
+
+- This pattern is recognizable by behavioral methods in an abstract/interface type (sender) which invokes a method in an implementation of a different abstract/interface type (receiver) which has been encapsulated by the command implementation during its creation.
+- It is easier to add new commands, queue or log commands for later execution, or undo/redo commands as needed.
+- The strategy pattern sounds similar. However, the intent is different. The strategy pattern focuses on providing alternative algorithms or strategies for a particular task, while the command pattern focuses on encapsulating a request as an object to enable undo/redo operations or to implement logging and transactional systems.
+
+Importance: 5
+
 ### 3.3. Iterator
 
 Allows us to traverse the elements of the collections without taking the exposure of in-depth details of the elements. It provides a way to access the elements of complex data structure sequentially without repeating them. It is used to access the elements of an aggregate object sequentially without exposing its underlying implementation.
