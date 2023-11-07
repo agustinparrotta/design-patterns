@@ -250,6 +250,13 @@ Importance: 2
 
 Allows you to define or create a subscription mechanism to send the notification to the multiple objects about any new event that happens to the object that they are observing. The subject is basically observed by multiple objects. The subject needs to be monitored and whenever there is a change in the subject, the observers are being notified about the change. This pattern defines one to Many dependencies between objects so that one object changes state, all of its dependents are notified and updated automatically.
 
+Notes:
+
+- It provides a way to react to events happening in other objects without coupling to their classes.
+- The pattern can be recognized by subscription methods, that store objects in a list and by calls to the update method issued to objects in that list.
+
+Importance: 5
+
 ### 3.7. State
 
 Allows an object to change its behavior when there occurs a change in its internal state. It helps in implementing the state as a derived class of the state pattern interface. If we have to change the behavior of an object based on its state, we can have a state variable in the Object and use if-else condition block to perform different actions based on the state. It may be termed as the object-oriented state machine. It implements the state transitions by invoking methods from the pattern’s superclass.
