@@ -118,7 +118,7 @@ Notes:
 - Bridge can be recognized by a clear distinction between some controlling entity and several different platforms that it relies on.
 - Useful for decoupling an abstraction from its implementation
 
-Importance: 1
+Importance: 2
 
 ### 2.3. Composite
 
@@ -168,6 +168,13 @@ Importance: 1
 Allows you to provide the replacement for an another object. Here, we use different classes to represent the functionalities of another class. The most important part is that here we create an object having original object functionality to provide to the outer world.
 
 Proxies are also called surrogates, handles, and wrappers. They are closely related in structure, but not purpose, to Adapters and Decorators. The purpose is "Controls and manage access to the object they are protecting".
+
+Notes:
+
+- It controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
+- It is useful when you want to add some additional behaviors to an object of some existing class without changing the client code.
+
+Importance: 2
 
 ## 3. Behavioral
 
