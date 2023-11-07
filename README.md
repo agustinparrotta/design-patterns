@@ -261,6 +261,13 @@ Importance: 5
 
 Allows an object to change its behavior when there occurs a change in its internal state. It helps in implementing the state as a derived class of the state pattern interface. If we have to change the behavior of an object based on its state, we can have a state variable in the Object and use if-else condition block to perform different actions based on the state. It may be termed as the object-oriented state machine. It implements the state transitions by invoking methods from the pattern’s superclass.
 
+Notes:
+
+- The State pattern is commonly used in Python to convert massive switch-base state machines into objects.
+- It can be used in various situations where an object’s behavior changes based on its internal state, such as in video games where characters may have different behaviors based on their health status.
+
+Importance: 3
+
 ### 3.8. Strategy
 
 Allows you to define the complete family of algorithms, encapsulates each one and putting each of them into separate classes and also allows to interchange there objects. It is implemented in Python by dynamically replacing the content of a method defined inside a class with the contents of functions defined outside of the class. It enables selecting the algorithm at run-time. This method is also called as Policy Method.
