@@ -229,6 +229,12 @@ Importance: 4
 
 Allows us to reduce the unordered dependencies between the objects. In a mediator environment, objects take the help of mediator objects to communicate with each other. It reduces coupling by reducing the dependencies between communicating objects. The mediator works as a router between objects and it can have it’s own logic to provide a way of communication.
 
+Notes:
+
+- Most popular usage is facilitating communications between GUI components of an app. The synonym of the Mediator is the Controller part of MVC pattern. Some examples: When communication is important. For example, in a distributed system, a mediator can be used to coordinate the communication between different nodes or services. Other potential use cases for the mediator pattern include chat applications, event-driven systems, and workflow management systems.
+
+Importance: 1
+
 ### 3.5. Memento
 
 Provides the ability to restore an object to its previous state. Without revealing the details of concrete implementations, it allows you to save and restore the previous version of the object. It tries not to disturb the encapsulation of the code and allows you to capture and externalize an object’s internal state.
