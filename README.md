@@ -272,6 +272,13 @@ Importance: 3
 
 Allows you to define the complete family of algorithms, encapsulates each one and putting each of them into separate classes and also allows to interchange there objects. It is implemented in Python by dynamically replacing the content of a method defined inside a class with the contents of functions defined outside of the class. It enables selecting the algorithm at run-time. This method is also called as Policy Method.
 
+Notes:
+
+- It’s often used in various frameworks to provide users a way to change the behavior of a class without extending it.
+- We can use it in scenarios where different algorithms can be applied to solve a problem, and the choice of algorithm can vary based on runtime conditions or requirements.
+
+Importance: 5
+
 ### 3.9. Template
 
 Defines the skeleton of the operation and leaves the details to be implemented by the child class. Its subclasses can override the method implementations as per need but the invocation is to be in the same way as defined by an abstract class. Such methods are highly used in framework development as they allow us to reuse the single piece of code at different places by making certain changes. This leads to avoiding code duplication too.
