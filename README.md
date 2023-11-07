@@ -145,6 +145,13 @@ Importance: 3
 
 Provides a simpler unified interface to a more complex system. The word Facade means the face of a building or particularly an outer lying interface of a complex system, consists of several sub-systems. It provides an easier way to access methods of the underlying systems by providing a single entry point.
 
+Notes:
+
+- Having a facade is handy when you need to integrate your app with a sophisticated library that has dozens of features, but you just need a tiny bit of its functionality.
+- It is basically a wrapper for a subsystem.
+
+Importance: 4
+
 ### 2.6. Proxy
 
 Allows you to provide the replacement for an another object. Here, we use different classes to represent the functionalities of another class. The most important part is that here we create an object having original object functionality to provide to the outer world.
