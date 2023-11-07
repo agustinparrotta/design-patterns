@@ -124,6 +124,12 @@ Importance: 1
 
 Describes a group of objects that is treated the same way as a single instance of the same type of the objects. The purpose is to compose objects into tree type structures to represent the whole-partial hierarchies.
 
+Notes:
+
+- Using the Composite pattern makes sense only when the core model of your app can be represented as a tree.
+
+Importance: 3
+
 ### 2.4. Decorator
 
 Allows you to dynamically attach new behaviors to objects without changing their implementation by placing these objects inside the wrapper objects that contains the behaviors. It is not equivalent to the Inheritance because the new feature is added only to that particular object, not to the entire subclass.
