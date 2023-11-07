@@ -239,6 +239,13 @@ Importance: 1
 
 Provides the ability to restore an object to its previous state. Without revealing the details of concrete implementations, it allows you to save and restore the previous version of the object. It tries not to disturb the encapsulation of the code and allows you to capture and externalize an object’s internal state.
 
+Notes:
+
+- Useful for games, database systems, transaction management.
+- It could consume too much memory.
+
+Importance: 2
+
 ### 3.6. Observer
 
 Allows you to define or create a subscription mechanism to send the notification to the multiple objects about any new event that happens to the object that they are observing. The subject is basically observed by multiple objects. The subject needs to be monitored and whenever there is a change in the subject, the observers are being notified about the change. This pattern defines one to Many dependencies between objects so that one object changes state, all of its dependents are notified and updated automatically.
