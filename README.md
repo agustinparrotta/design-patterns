@@ -113,6 +113,13 @@ Importance: 4
 
 Allows us to separate the Implementation Specific Abstractions and Implementation Independent Abstractions from each other and can be developed considering as the single entities. Bridge Method is always considered as one of the best methods to organize the class hierarchy.
 
+Notes:
+
+- Bridge can be recognized by a clear distinction between some controlling entity and several different platforms that it relies on.
+- Useful for decoupling an abstraction from its implementation
+
+Importance: 1
+
 ### 2.3. Composite
 
 Describes a group of objects that is treated the same way as a single instance of the same type of the objects. The purpose is to compose objects into tree type structures to represent the whole-partial hierarchies.
