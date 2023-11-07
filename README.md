@@ -134,6 +134,13 @@ Importance: 3
 
 Allows you to dynamically attach new behaviors to objects without changing their implementation by placing these objects inside the wrapper objects that contains the behaviors. It is not equivalent to the Inheritance because the new feature is added only to that particular object, not to the entire subclass.
 
+Notes:
+
+- Without creating a new subclass, it’s possible to enhance the functionality of an object by extending its behavior.
+- Use python implementation.
+
+Importance: 3
+
 ### 2.5. Facade
 
 Provides a simpler unified interface to a more complex system. The word Facade means the face of a building or particularly an outer lying interface of a complex system, consists of several sub-systems. It provides an easier way to access methods of the underlying systems by providing a single entry point.
