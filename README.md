@@ -218,6 +218,13 @@ Importance: 5
 
 Allows us to traverse the elements of the collections without taking the exposure of in-depth details of the elements. It provides a way to access the elements of complex data structure sequentially without repeating them. It is used to access the elements of an aggregate object sequentially without exposing its underlying implementation.
 
+Notes:
+
+- Iterator is easy to recognize by the navigation methods (such as next, previous and others).
+- Applying the pattern can be an overkill if your app only works with simple collections.
+
+Importance: 4
+
 ### 3.4. Mediator
 
 Allows us to reduce the unordered dependencies between the objects. In a mediator environment, objects take the help of mediator objects to communicate with each other. It reduces coupling by reducing the dependencies between communicating objects. The mediator works as a router between objects and it can have it’s own logic to provide a way of communication.
