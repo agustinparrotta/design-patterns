@@ -293,6 +293,12 @@ Importance: 4
 
 Allows us to separate the algorithm from an object structure on which it operates. It helps us to add new features to an existing class hierarchy dynamically without changing it. All the behavioral patterns proved as the best methods to handle the communication between the objects. Similarly, it is used when we have to perform an operation on a group of similar kinds of objects.
 
+Notes:
+
+- It is often used in compilers, interpreters, or other tools that work with complex abstract syntax trees.
+
+Importance: 2
+
 # References
 
 See those posts for more information:
