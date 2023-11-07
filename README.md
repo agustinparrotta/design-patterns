@@ -283,6 +283,12 @@ Importance: 5
 
 Defines the skeleton of the operation and leaves the details to be implemented by the child class. Its subclasses can override the method implementations as per need but the invocation is to be in the same way as defined by an abstract class. Such methods are highly used in framework development as they allow us to reuse the single piece of code at different places by making certain changes. This leads to avoiding code duplication too.
 
+Notes:
+
+- Useful to provide framework users with a simple means of extending standard functionality using inheritance.
+
+Importance: 4
+
 ### 3.10. Visitor
 
 Allows us to separate the algorithm from an object structure on which it operates. It helps us to add new features to an existing class hierarchy dynamically without changing it. All the behavioral patterns proved as the best methods to handle the communication between the objects. Similarly, it is used when we have to perform an operation on a group of similar kinds of objects.
