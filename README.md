@@ -12,6 +12,12 @@ Types:
 
 Provides essential information regarding the **Class** instantiation or the **Object** instantiation. Class Creational Pattern and the Object Creational pattern is the major categorization of the Creational Design Patterns. **Class-creation** patterns use **inheritance** effectively in the instantiation process, and **object-creation** patterns use **delegation** effectively to get the job done.
 
+Notes:
+
+- Help deal with object instantiation -> simpler interface to the user
+
+Patterns :
+
 - Factory
 - Abstract factory
 - Builder
@@ -31,8 +37,10 @@ Notes:
 - Uses inheritance, but does not require an init step
 - Is a specialization of the Template pattern.
 - 2 main entities: Creator and Product. Creator knows how to create the product and execute it. Product contains operation itself.
+- Factory and Abstract Factory are not usually needed in python given that everything is an object, so it can be resolved with just simply defining a function that will construct a set of objects, and we can even pass the class that we want to create with a parameter (see factory_simple.py)
 
 Importance: 5
+Recommended: 2 (with functions)
 
 ### 1.2. Abstract factory
 
@@ -47,6 +55,7 @@ Notes:
 - 2 main entities: Creator and Product
 
 Importance: 4
+Recommended: 2 (with functions)
 
 ### 1.3. Builder
 
@@ -54,12 +63,14 @@ Aims to separate the construction of a complex object from its representation so
 
 - Allows you to construct complex objects step by step. Using the same construction code, we can produce different types and representations of the object easily.
 - Provides flexibility to the solutions to various object creation problems.
+- It abstracts away all the complex initialization of an object. But we should reserve this implementation for cases where we expect to expose an API that is going to be consumed by multiple users.
 
 Notes:
 
 - Use Builder only when the products are quite complex and require extensive configuration
 
 Importance: 4
+Recommended: 3
 
 ### 1.4. Prototype
 
@@ -73,12 +84,15 @@ Notes:
 - Basically is the implementation of `copy.copy` and `copy.deepcopy` for custom objects
 
 Importance: 3
+Recommended: 2
 
 ### 1.5. Singleton
 
 It is a way to provide one and only one object of a particular type. It involves only one class to create methods and specify the objects.
 
 - Example: Database connectivity. When each object creates a unique Database Connection to the Database, it will highly affect the cost and expenses of the project. So, it is always better to make a single connection rather than making extra irrelevant connections.
+- They are generally not a good idea. They are hard to unit test, the fact that they might be modified at any time by any object makes them hard to predict, and their side effects can be really problematic. As a general principle, we should avoid using singletons as much as possible.
+The easiest way of achieving a similar behavior in Python is by using a module.
 
 Notes:
 
@@ -86,10 +100,17 @@ Notes:
 - It brakes the Single Responsibility Principle.
 
 Importance: 3
+Recommended: 1 (with module or borg)
 
 ## 2. Structural
 
 Are about organizing different classes and objects to form larger structures and provide new functionality while keeping these structures flexible and efficient. Mostly they use Inheritance to compose all the interfaces. It also identifies the relationships which led to the simplification of the structure.
+
+Notes:
+
+- Help when we need to create simpler interfaces or objects that are more powerful by extending their functionality without adding complexity to their interfaces. They are concerned with the composition of classes and objects. They provide ways to combine objects and classes in a way that is flexible and efficient.
+
+Patterns :
 
 - Adapter
 - Bridge
@@ -106,8 +127,17 @@ Help us in making the incompatible objects adaptable to each other. This method 
 Notes:
 
 - It’s very often used in systems based on some legacy code. In such cases, Adapters make legacy code work with modern classes.
+- It is one of the simplest and useful patterns there are.
+- Solves the problem of adapting interfaces of two or more objects that are not compatible (e.g. methods from a 3rd party library).
+- 2 ways:
+
+    1. Create a class that inherits from the one we need and create an alias for the method, which internally will adapt the call to make it compatible with the method we need (see adapter_extra_ex.py, option 1)
+    2. A better approach would be to use composition instead (see adapter_extra_ex.py, option 2, or adapter_conceptual.py)
+
+- If we want to perform transformations or extra functionality over an object, while keeping its original interface, the decorator pattern is a much better option, as we'll see later in this chapter.
 
 Importance: 4
+Recommended: 5 (using composition)
 
 ### 2.2. Bridge
 
@@ -127,8 +157,11 @@ Describes a group of objects that is treated the same way as a single instance o
 Notes:
 
 - Using the Composite pattern makes sense only when the core model of your app can be represented as a tree.
+- The composite object, however, will act as a client; this will also pass this request along with all the objects it contains, whether they are leaves or other intermediate notes, until they are all processed.
+- For a simpler approach, see composite_extra_ex.py
 
 Importance: 3
+Recommended: 4
 
 ### 2.4. Decorator
 
@@ -137,9 +170,11 @@ Allows you to dynamically attach new behaviors to objects without changing their
 Notes:
 
 - Without creating a new subclass, it’s possible to enhance the functionality of an object by extending its behavior.
-- Use python implementation.
+- These decorators plus the original object are chained, and each one of them does what it was originally supposed to do, plus something else. This something else is the particular decoration step.
+- An interesting alternative approach can be seen in decorator_extra_ex.py and decorator_extra_ex_2.py (a function-based version)
 
 Importance: 3
+Recommended: 4
 
 ### 2.5. Facade
 
@@ -149,8 +184,13 @@ Notes:
 
 - Having a facade is handy when you need to integrate your app with a sophisticated library that has dozens of features, but you just need a tiny bit of its functionality.
 - It is basically a wrapper for a subsystem.
+- It is useful in many situations where we want to simplify the interaction between objects.
+- The pattern is applied where there is a relation of many-to-many among several objects, and we want them to interact. Instead of creating all of these connections, we place an intermediate object in front of many of them that act as a facade.
+- The facade works as a hub or a single point of reference in this layout. Every time a new object wants to connect to another one, instead of having to have N interfaces for all N possible objects it needs to connect to (requiring O(N2) total connections), it will instead just talk to the facade,
+and this will redirect the request accordingly.
 
 Importance: 4
+Recommended: 5
 
 ### 2.6. FlyWeight
 
@@ -180,6 +220,12 @@ Importance: 2
 
 Are about identifying the common communication patterns between objects and realize these patterns. These patterns are concerned with algorithms and the assignment of responsibilities between objects.
 
+Notes:
+
+- Solve the problem of how objects should cooperate, how they should communicate, and what their interfaces should be at runtime. They are concerned with the communication between objects. They provide ways to define the communication between objects, as well as the flow of information between them.
+
+Patterns :
+
 - Chain of responsibility
 - Command
 - Iterator
@@ -199,8 +245,10 @@ This pattern aims to decouple the senders of a request from its receivers by all
 Notes:
 
 - It’s mostly relevant when your code operates with chains of objects, such as filters, event chains, etc.
+- See a handy example in chain_of_responsibility_extra_ex.py
 
 Importance: 3
+Recommended: 4
 
 ### 3.2. Command
 
@@ -211,8 +259,12 @@ Notes:
 - This pattern is recognizable by behavioral methods in an abstract/interface type (sender) which invokes a method in an implementation of a different abstract/interface type (receiver) which has been encapsulated by the command implementation during its creation.
 - It is easier to add new commands, queue or log commands for later execution, or undo/redo commands as needed.
 - The strategy pattern sounds similar. However, the intent is different. The strategy pattern focuses on providing alternative algorithms or strategies for a particular task, while the command pattern focuses on encapsulating a request as an object to enable undo/redo operations or to implement logging and transactional systems.
+- It provides us with the ability to separate an action that needs to be done from the moment that it is requested to its actual execution.
+- Examples of this can be found in libraries that interact with databases. For instance, in psycopg2 (a PostgreSQL client library), we establish a connection. From this, we get a cursor, and to that cursor, we can pass a SQL statement to run. When we call the execute method, the internal representation of the object changes, but nothing is actually run in the database. It is when we call fetchall() (or a similar method) that the data is actually queried and is available in the cursor.
+- This pattern can be useful when we're dealing with asynchronous programming.
 
 Importance: 5
+Recommended: 4
 
 ### 3.3. Iterator
 
@@ -265,8 +317,10 @@ Notes:
 
 - The State pattern is commonly used in Python to convert massive switch-base state machines into objects.
 - It can be used in various situations where an object’s behavior changes based on its internal state, such as in video games where characters may have different behaviors based on their health status.
+- For example, we can create an object for each kind of state we want to represent, and, in their methods, we place the logic for the transitions with the aforementioned rules (see state_extra_ex.py).
 
 Importance: 3
+Recommended: 4
 
 ### 3.8. Strategy
 
@@ -286,8 +340,10 @@ Defines the skeleton of the operation and leaves the details to be implemented b
 Notes:
 
 - Useful to provide framework users with a simple means of extending standard functionality using inheritance.
+- Mainly, it allows us to reuse code, and it also makes our objects more flexible and easier to change while preserving polymorphism.
 
 Importance: 4
+Recommended: 5
 
 ### 3.10. Visitor
 
@@ -298,6 +354,21 @@ Notes:
 - It is often used in compilers, interpreters, or other tools that work with complex abstract syntax trees.
 
 Importance: 2
+
+## 4. Extras
+
+### 4.1. The null object pattern
+
+Suppose that you call a method process() which normally returns a dictionary. In the case response is empty, we could have this error: AttributeError: 'NoneType' object has no attribute 'keys'.
+In this case, the fix is rather simple the default value of the process() method should be an empty dictionary rather than None.
+But what if the method didn't return a dictionary, but a custom object of our domain?
+To solve this problem, we should have a class that represents the empty state for that object and return it. If we have a class that represents users in our system, and a function that queries users by their ID , then in the case that a user is not found, it should do one of the following two things:
+- Raise an exception
+- Return an object of the UserUnknown type
+
+But in no case should it return None . The phrase None doesn't represent what just happened, and the caller might legitimately try to ask methods to it, and it will fail with AttributeError .
+This pattern is a good practice that allows us to maintain polymorphism in our objects.
+
 
 # References
 
